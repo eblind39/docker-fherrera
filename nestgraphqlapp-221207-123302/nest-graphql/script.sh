@@ -1,0 +1,1 @@
+curl --connect-timeout 10 -k -XGET -H 'password: CxNc86grx2' -H 'username: vucenni' -H "Content-type: application/json" 'https://10.200.4.13:8130/api/seguridad/solicitar-token' > /usr/local/bin/pdcc_get_token_FULL.res && cat /usr/local/bin/pdcc_get_token_FULL.res | grep '"access_token"' > /usr/local/bin/pdcc_get_token.res

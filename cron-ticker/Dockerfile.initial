@@ -1,0 +1,25 @@
+#contiene las carpetas: /pp /usr /lib, etc
+FROM node:19.2-alpine3.16
+
+# cd /app
+WORKDIR /app
+
+#copiar al directorio destino /app
+COPY package.json ./
+
+#instalar dependencias
+RUN npm install 
+
+COPY . .
+
+#realizar testing
+RUN npm run test
+
+#eliminar archivos y dirs no necesarios en PROD
+RUN rm -rf tests && rm -rf node_modules
+
+#unicamente instalar las dependencias de produccion
+RUN npm install --prod
+
+#comando Run de la imágen
+CMD [ "node", "app.js" ]

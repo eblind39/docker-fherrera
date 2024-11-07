@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  db:
+    container_name: pokemonDB
+    image: mongo:6.0
+    volumes:
+      - poke-vol:/data/db
+    ports:
+      - "27017:27017"  # solamente se conecta de mongo-express
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: strider
+      MONGO_INITDB_ROOT_PASSWORD: 123456789
+    command: ['--auth']
+    restart: always
+
+  mongo-express:
+    depends_on:
+      - db
+    image: mongo-express:1.0.0-alpha.4
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: strider
+      ME_CONFIG_MONGODB_ADMINPASSWORD: 123456789
+      ME_CONFIG_MONGODB_SERVER: pokemonDB
+    ports:
+      - "8080:8081"
+    restart: always
+
+  poke-app:
+    depends_on:
+      - db
+      - mongo-express
+    image: klerith/pokemon-nest-app:1.0.0
+    ports:
+      - "3000:3000"
+    environment:
+      MONGODB: mongodb://strider:123456789@pokemonDB:27017
+      DB_NAME: pokemonDB
+    restart: always
+
+volumes:
+  poke-vol:
+    external: false
