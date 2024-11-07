@@ -183,3 +183,33 @@ docker buildx build --platform linux/amd64,linux/arm64,linux/mips64,linux/arm/v7
 ```sh
 docker buildx build --platform linux/amd64,linux/arm64,linux/mips64,linux/arm/v7 --tag eblind39/cron-ticker:guacamayo --push .
 ```
+
+## Multi-State Build
+* Variables de entorno para ambientes
+* Stages como:
+    * dev
+    * dependencies
+    * prod-dependencies
+    * prod
+    * runner
+    * builder
+    * tester
+* Configuraciones adicionales
+* Dockerfile + Docker Compose
+* Bind mounts en Compose
+* Seleccionar un stage específico a ejecutar únicamente
+* Docker Compose para producción
+* Auto tag en Compose
+
+### eliminar mybuilder
+```sh
+docker buildx ls
+
+docker buildx use default
+
+docker buildx rm mybuilder
+```
+
+> ## COPY vs ADD & Dockerfile COPY command
+> https://phoenixnap.com/kb/docker-add-vs-copy
+>> https://docs.docker.com/reference/dockerfile/#copy

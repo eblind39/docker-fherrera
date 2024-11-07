@@ -1,5 +1,9 @@
+.git
 cron-ticker/node_modules/
+cron-ticker/package-lock.json
 nestgraphqlapp-221207-123302/__MACOSX/
 nestgraphqlapp-221207-123302/nest-graphql/node_modules/
 nestgraphqlapp-221207-123302/nest-graphql/dist/
+nestgraphqlapp-221207-123302/nest-graphql/yarn.lock
+nestgraphqlapp-221207-123302/nest-graphql/.git
 postgres-pgAdmin/data-vol/
