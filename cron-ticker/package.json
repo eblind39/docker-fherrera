@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "start": "node app.js"
+    "test": "bun test",
+    "start": "bun run app.js"
   },
   "author": "",
   "license": "ISC",

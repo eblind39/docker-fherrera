@@ -1,4 +1,5 @@
 .git
+cron-ticker/bun.lockb
 cron-ticker/node_modules/
 cron-ticker/package-lock.json
 nestgraphqlapp-221207-123302/__MACOSX/
