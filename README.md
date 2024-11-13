@@ -218,3 +218,20 @@ docker buildx rm mybuilder
 ```sh
 docker compose -f docker-compose.prod.yml build
 ```
+
+## Deployments y Registros
+En esta sección aprenderemos a realizar diferentes formas de utilizar las imágenes que creamos y subirlas a registros privados.
+
+Puntualmente:
+* Digital Ocean
+* Registros
+* Nombres y versionamiento
+* Uso de imágenes
+* Aprovisionamiento de Postgres
+* Autenticación a otros registros
+* Otras consideraciones.
+
+```sh
+docker buildx build -f Dockerfile --platform linux/amd64,linux/arm64,linux/mips64,linux/arm/v7 --tag eblind39/teslo-shop:latest --push .
+```
+
