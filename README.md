@@ -213,3 +213,8 @@ docker buildx rm mybuilder
 > ## COPY vs ADD & Dockerfile COPY command
 > https://phoenixnap.com/kb/docker-add-vs-copy
 >> https://docs.docker.com/reference/dockerfile/#copy
+
+## Construir despliegue de producción
+```sh
+docker compose -f docker-compose.prod.yml build
+```

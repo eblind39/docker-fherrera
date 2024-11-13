@@ -8,3 +8,6 @@ nestgraphqlapp-221207-123302/nest-graphql/dist/
 nestgraphqlapp-221207-123302/nest-graphql/yarn.lock
 nestgraphqlapp-221207-123302/nest-graphql/.git
 postgres-pgAdmin/data-vol/
+teslo-shop/node_modules
+teslo-shop/dist
+teslo-shop/static/products
