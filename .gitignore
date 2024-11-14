@@ -11,3 +11,4 @@ postgres-pgAdmin/data-vol/
 teslo-shop/node_modules
 teslo-shop/dist
 teslo-shop/static/products
+teslo-testing/.env
