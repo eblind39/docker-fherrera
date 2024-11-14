@@ -5,12 +5,14 @@ services:
 
   app:
 
+    env_file:
+      - .env
     build:
       context: .
       target: ${STAGE}
       dockerfile: Dockerfile
     
-    image: klerith/teslo-shop-backend:2.5.0
+    image: eblind39/teslo-shop-backend:2.5.0
     container_name: nest-app
     ports:
       - ${PORT}:${PORT}
@@ -24,9 +26,11 @@ services:
       DB_USERNAME: ${DB_USERNAME}
       PORT: ${PORT}
       HOST_API: ${HOST_API}
-      JWT_SECRET: ${JWT_SECRET}
+      #JWT_SECRET: ${JWT_SECRET}
   
   db:
+    env_file:
+      - .env
     image: postgres:14.3
     restart: always
     ports:
