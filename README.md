@@ -233,5 +233,11 @@ Puntualmente:
 
 ```sh
 docker buildx build -f Dockerfile --platform linux/amd64,linux/arm64,linux/mips64,linux/arm/v7 --tag eblind39/teslo-shop:latest --push .
-```
 
+docker login registry.digitalocean.com
+#(ingresar token como usuario y password) (esto lo vemos en la próxima clase)
+
+docker logout registry.digitalocean.com
+
+docker buildx build --platform linux/amd64,linux/arm64 -t registry.digitalocean.com/<Nuestro registro>/teslo-shop:[TAG] --push .
+```
