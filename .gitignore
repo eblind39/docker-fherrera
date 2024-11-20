@@ -12,3 +12,9 @@ teslo-shop/node_modules
 teslo-shop/dist
 teslo-shop/static/products
 teslo-testing/.env
+graphql-actions/package-lock.json
+graphql-actions/yarn.lock
+graphql-actions/node_modules/
+graphql-actions/.git
+graphql-actions/.github
+graphql-actions/dist/

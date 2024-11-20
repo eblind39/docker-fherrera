@@ -241,3 +241,14 @@ docker logout registry.digitalocean.com
 
 docker buildx build --platform linux/amd64,linux/arm64 -t registry.digitalocean.com/<Nuestro registro>/teslo-shop:[TAG] --push .
 ```
+
+## Sección 8 - Github Actions
+Automatizar el proceso de construcción, despliegue y versionamiento de nuestras imágenes.
+
+Puntualmente veremos:
+* Github actions
+* Github Semantic Versioning
+* Automatic build
+* Automatic push
+* Mensajes de commit para disparar versiones
+* Despliegues automáticos a registros privados
