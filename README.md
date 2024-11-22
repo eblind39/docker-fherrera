@@ -252,3 +252,7 @@ Puntualmente veremos:
 * Automatic push
 * Mensajes de commit para disparar versiones
 * Despliegues automáticos a registros privados
+
+```sh
+docker build --tag graphql-actions:0.0.1 .
+```
