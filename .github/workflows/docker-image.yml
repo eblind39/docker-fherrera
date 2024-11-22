@@ -30,7 +30,7 @@ jobs:
         
     - name: Build docker image
       run: |
-        docker build --file ./graphql-actions/Dockerfile -t eblind39/docker-graphql:0.0.2
+        docker image build --file ./graphql-actions/Dockerfile -t eblind39/docker-graphql:0.0.2
 
     - name: Push docker image
       run: |
