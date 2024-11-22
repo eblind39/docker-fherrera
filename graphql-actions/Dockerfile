@@ -8,7 +8,7 @@ RUN yarn install --frozen-lockfile
 FROM node:19-alpine3.15 as builder
 WORKDIR /app
 COPY --from=dev-deps /app/node_modules /app/node_modules
-COPY ./graphql-actions /app/graphql-actions
+ADD ./graphql-actions /app/graphql-actions
 # RUN yarn test
 RUN yarn build
 
