@@ -3,8 +3,8 @@ name: Docker Image CI
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  #pull_request:
+  #  branches: [ "main" ]
 
 jobs:
 
@@ -13,6 +13,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: docker build --file ./graphql-actions/Dockerfile --tag my-image-name:$(date +%s)
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Docker login
+      env:
+        HUB_DOCKER_USER: ${{ secrets.HUB_DOCKER_USER }}
+        HUB_DOCKER_PASSWORD: ${{ secrets.HUB_DOCKER_PASSWORD }}
+      run: |
+        echo "Login starts"
+        docker login -u $HUB_DOCKER_USER -p $HUB_DOCKER_PASSWORD
+        echo "Login ends"
+    # - name: Build the Docker image
+    #   run: docker build --file ./graphql-actions/Dockerfile --tag my-image-name:$(date +%s)
