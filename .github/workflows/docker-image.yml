@@ -13,10 +13,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    
     - name: Checkout code
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
+        
     - name: Docker login
       env:
         HUB_DOCKER_USER: ${{ secrets.HUB_DOCKER_USER }}
@@ -25,5 +27,13 @@ jobs:
         echo "Login starts"
         docker login -u $HUB_DOCKER_USER -p $HUB_DOCKER_PASSWORD
         echo "Login ends"
+        
+    - name: Build docker image
+      run: |
+        docker build -t eblind39/docker-graphql:0.0.2 .
+
+    - name: Push docker image
+      run: |
+        docker image push eblind39/docker-graphql:0.0.2
     # - name: Build the Docker image
     #   run: docker build --file ./graphql-actions/Dockerfile --tag my-image-name:$(date +%s)
