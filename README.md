@@ -256,3 +256,6 @@ Puntualmente veremos:
 ```sh
 docker build --tag graphql-actions:0.0.1 .
 ```
+
+https://github.com/marketplace/actions/git-semantic-version?version=v4.0.3
+
