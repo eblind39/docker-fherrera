@@ -32,21 +32,25 @@ jobs:
       env:
         HUB_DOCKER_USER: ${{ secrets.HUB_DOCKER_USER }}
         HUB_DOCKER_PASSWORD: ${{ secrets.HUB_DOCKER_PASSWORD }}
-        NEW_VERSION: ${{ steps.version.outputs.version }}
+        
       run: |
         echo "Login starts"
         docker login -u $HUB_DOCKER_USER -p $HUB_DOCKER_PASSWORD
         echo "Login ends"
         echo "New version: $NEW_VERSION !!!!!"
         
-    # - name: Build docker image
-    #   run: |
-    #     docker image build --file ./graphql-actions/Dockerfile -t eblind39/docker-graphql:0.0.2 .
-    #     docker image build --file ./graphql-actions/Dockerfile -t eblind39/docker-graphql:latest .
+    - name: Build docker image
+      env:
+        NEW_VERSION: ${{ steps.version.outputs.version }}
+      run: |
+        docker image build --file ./graphql-actions/Dockerfile -t eblind39/docker-graphql:$NEW_VERSION .
+        docker image build --file ./graphql-actions/Dockerfile -t eblind39/docker-graphql:latest .
 
-    # - name: Push docker image
-    #   run: |
-    #     docker image push eblind39/docker-graphql:0.0.2
-    #     docker image push eblind39/docker-graphql:latest
+    - name: Push docker image
+      env:
+        NEW_VERSION: ${{ steps.version.outputs.version }}
+      run: |
+        docker image push eblind39/docker-graphql:$NEW_VERSION
+        docker image push eblind39/docker-graphql:latest
     # - name: Build the Docker image
     #   run: docker build --file ./graphql-actions/Dockerfile --tag my-image-name:$(date +%s)
