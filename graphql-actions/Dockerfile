@@ -23,6 +23,6 @@ EXPOSE 3000
 WORKDIR /app
 ENV APP_VERSION=${APP_VERSION}
 COPY --from=prod-deps /app/node_modules /app/node_modules
-COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/dist /app/dist
 
 CMD [ "node","dist/main.js"]
