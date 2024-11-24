@@ -18,3 +18,6 @@ graphql-actions/node_modules/
 graphql-actions/.git
 graphql-actions/.github
 graphql-actions/dist/
+react-heroes/node_modules/
+react-heroes/dist
+react-heroes/yarn.lock

@@ -259,3 +259,25 @@ docker build --tag graphql-actions:0.0.1 .
 
 https://github.com/marketplace/actions/git-semantic-version?version=v4.0.3
 
+## Sección 9
+
+Trabajar con nginx server, el cual es la imagen más descargada de docker hub.
+
+Puntualmente veremos:
+
+* ¿Qué es brevemente nginx?
+* Inspeccionar el file system de nginx
+* Crear imágenes basadas en nginx
+* Desplegar una aplicación de React en nginx
+* Desplegar un SPA (Single Page Application)
+* Configurar nginx para designar el router de React como controlador de rutas
+
+Es una sección muy importante e interesante si quieres tener tu aplicación web desplegada en un servidor robusto y seguro.
+
+```sh
+docker container run --name some-nginx -d -p 8080:80 nginx:1.23.3
+
+docker container ls --all | grep Up | batcat
+
+docker exec -it ce8c74d8a194 /bin/sh
+```
