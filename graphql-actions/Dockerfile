@@ -12,18 +12,10 @@ COPY ./graphql-actions/*.* /app
 # RUN yarn test
 RUN yarn build
 
-FROM node:19-alpine3.15 as prod-deps
-WORKDIR /app
-COPY ./graphql-actions/package.json /app/package.json
-RUN yarn install --prod --frozen-lockfile
 
+FROM nginx:1.23.3 as prod-deploy
+EXPOSE 80
+WORKDIR /usr/share/nginx/html
+COPY --from=app-builder /app/dist .
 
-FROM node:19-alpine3.15 as prod
-EXPOSE 3000
-WORKDIR /app
-#ENV APP_VERSION=${APP_VERSION}
-COPY --from=prod-deps /app/node_modules /app/node_modules
-COPY --from=app-builder /app/dist /app/dist
-
-CMD [ "node","dist/main.js"]
-#CMD [ "ls","/app/dist/main.js"]
+CMD [ "nginx","-g","daemon off;"]
