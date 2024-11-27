@@ -320,3 +320,7 @@ minikube start
 
 https://kubernetes.io/es/docs/concepts/
 
+```sh
+echo -n postgres | base64
+```
+
