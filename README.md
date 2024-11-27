@@ -287,3 +287,36 @@ docker container run --name heroes-app -p 8080:80 react-heroes:0.0.1
 
 docker image build --tag react-heroes:0.0.1 . --no-cache
 ```
+
+## Sección 10 - Intro 2 K8's
+
+Cómo funciona Kubernetes (K8s) y varios de sus componentes, puntualmente veremos:
+
+* ¿Cuál es su objetivo?
+* Configuraciones básicas
+* Secretos y ConfigMaps
+* Base64 encoded strings
+* Deployments
+* Agregar al cluster
+* Minikube
+* KubeCtl
+* Replicas
+* Kubernetes Docs
+* Cleaning
+
+https://minikube.sigs.k8s.io/docs/
+
+```sh
+#as root
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+
+install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
+
+#as No root
+minikube version
+
+minikube start
+```
+
+https://kubernetes.io/es/docs/concepts/
+
