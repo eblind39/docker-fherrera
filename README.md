@@ -280,4 +280,10 @@ docker container run --name some-nginx -d -p 8080:80 nginx:1.23.3
 docker container ls --all | grep Up | batcat
 
 docker exec -it ce8c74d8a194 /bin/sh
+
+docker image build --tag react-heroes:0.0.1 .
+
+docker container run --name heroes-app -p 8080:80 react-heroes:0.0.1
+
+docker image build --tag react-heroes:0.0.1 . --no-cache
 ```
