@@ -322,5 +322,18 @@ https://kubernetes.io/es/docs/concepts/
 
 ```sh
 echo -n postgres | base64
-```
 
+kubectl version
+
+kubectl apply -f postgres-config.yml
+
+kubectl apply -f postgres-secrets.yml
+
+kubectl apply -f postgres.yml
+
+kubectl get all
+
+kubectl describe deployment.apps/postgres-deployment
+
+kubectl logs pod/postgres-deployment-845795b968-fg4xs
+```
