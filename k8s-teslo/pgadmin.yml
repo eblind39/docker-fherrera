@@ -31,7 +31,7 @@ spec:
               name: pgadmin-secrets
               key: PGADMIN_DEFAULT_EMAIL
         - name: PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION
-          value: "false"
+          value: "False"
 ---
 apiVersion: v1
 kind: Service

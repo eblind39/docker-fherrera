@@ -336,4 +336,18 @@ kubectl get all
 kubectl describe deployment.apps/postgres-deployment
 
 kubectl logs pod/postgres-deployment-845795b968-fg4xs
+
+kubectl apply -f pgadmin-secrets.yml
+
+kubectl apply -f pgadmin.yml
+
+kubectl describe deployment.apps/pgadmin-deployment
+
+kubectl logs pod/pgadmin-deployment-6d69b49696-tsdn
+
+#se debe volver a dar apply a cualquier archivo que haya cambiado y los que dependan de el
+kubectl apply -f pgadmin.yml
+
+#ver la exposicion del servicio desde Ingress
+minikube service pgadmin-service
 ```
