@@ -316,6 +316,9 @@ install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
 minikube version
 
 minikube start
+
+#eliminar cluster desplegados y configs
+minikube delete
 ```
 
 https://kubernetes.io/es/docs/concepts/
@@ -350,4 +353,22 @@ kubectl apply -f pgadmin.yml
 
 #ver la exposicion del servicio desde Ingress
 minikube service pgadmin-service
+
+kubectl apply -f backend-secrets.yml
+
+kubectl apply -f backend.yml
+
+kubectl describe deployment.apps/backend-deployment
+
+kubectl logs pod/backend-deployment-ccd55c69b-mchqz
+
+#feed/follow log
+kubectl logs -f pod/backend-deployment-ccd55c69b-nlrp8
+
+#restart all the deployments
+kubectl rollout restart deployment
+
+# restart only one deployment
+# in case we change the JWT_SECRET for example
+kubectl rollout restart deployment backend-deployment
 ```
