@@ -371,4 +371,10 @@ kubectl rollout restart deployment
 # restart only one deployment
 # in case we change the JWT_SECRET for example
 kubectl rollout restart deployment backend-deployment
+
+#run out app
+minikube service backend-service
+
+#flush all
+minikube delete --all
 ```
