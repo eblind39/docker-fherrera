@@ -172,12 +172,14 @@ docker buildx inspect
 docker buildx build --platform linux/amd64,linux/arm64,linux/mips64,linux/arm/v7 --tag eblind39/cron-ticker:latest --push .
 ```
 
-> list in hub.docker.com
-#### Digest		OS/ARCH		Last pull	Compressed Size
-#### 60d1a398a57b	linux/amd64	---		55.32 MB
-#### 1b0c33190ec3	linux/arm/v7	---		55.32 MB
-#### cf04c5961b2d	linux/arm64	---		55.32 MB
-#### 51cd144bc743	linux/mips64	---		55.32 MB
+> list in hub.docker.com:
+
+|Digest|		OS/ARCH|		Last pull|	Compressed Size|
+|---|---|---|---|
+|60d1a398a57b|	linux/amd64|	---|		55.32 MB|
+|1b0c33190ec3|	linux/arm/v7|	---|		55.32 MB|
+|cf04c5961b2d|	linux/arm64|	---|		55.32 MB|
+|51cd144bc743|	linux/mips64|	---|		55.32 MB|
 
 ### darle tag descriptivo a nuestro latest para que no sea sobre-escrito por otro latest a futuro
 ```sh
