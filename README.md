@@ -380,3 +380,6 @@ minikube service backend-service
 #flush all
 minikube delete --all
 ```
+
+# VSCode
+
